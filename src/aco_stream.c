@@ -281,7 +281,7 @@ size_t aco_stream_read_n(aco_stream_t* s, void* buf, size_t count) {
 size_t aco_stream_read_8(aco_stream_t* s, char* ch) {
     if (s->in.curr >= s->in.last) {
         size_t count = aco_stream_read_fd(s);
-        if (count == 0) {
+        if (s->result != ACO_OK) {
             return count;
         }
     }
@@ -294,7 +294,7 @@ size_t aco_stream_read_8(aco_stream_t* s, char* ch) {
 size_t aco_stream_read_16(aco_stream_t* s, uint16_t* u16) {
     while (s->in.last - s->in.curr < 2) {
         size_t count = aco_stream_read_fd(s);
-        if (count == 0) {
+        if (s->result != ACO_OK) {
             return count;
         }
     }
@@ -308,7 +308,7 @@ size_t aco_stream_read_16(aco_stream_t* s, uint16_t* u16) {
 size_t aco_stream_read_32(aco_stream_t* s, uint32_t* u32) {
     while (s->in.last - s->in.curr < 4) {
         size_t count = aco_stream_read_fd(s);
-        if (count == 0) {
+        if (s->result != ACO_OK) {
             return count;
         }
     }
@@ -322,7 +322,7 @@ size_t aco_stream_read_32(aco_stream_t* s, uint32_t* u32) {
 size_t aco_stream_read_64(aco_stream_t* s, uint64_t* u64) {
     while (s->in.last - s->in.curr < 8) {
         size_t count = aco_stream_read_fd(s);
-        if (count == 0) {
+        if (s->result != ACO_OK) {
             return count;
         }
     }
