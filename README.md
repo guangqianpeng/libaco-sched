@@ -4,7 +4,7 @@ A coroutine scheduler and lightweight network library for [libaco](https://githu
 
 # Introduction
 
-libaco-sched is a N:1 cooperative multi-task library, which enables you to build single threaded network applications easily.
+libaco-sched is a N:1 cooperative multi-task library, which enables you to build concurrent network applications easily.
 
 # Install
 
