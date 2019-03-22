@@ -8,13 +8,15 @@ endif()
 
 # only build examples if this is the main project
 if(CMAKE_PROJECT_NAME STREQUAL "aco")
-  option(ACO_BUILD_EXAMPLES "Build aco examples" ON)
+    option(ACO_BUILD_EXAMPLES "Build aco examples" ON)
 endif()
 
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
 option(USE_VALGRIND "Build aco with valgrind" OFF)
 option(SHARE_FPU_MXCSR_ENV "Build aco with share fpu and mxcsr environment" OFF)
+
+set(CMAKE_C_STANDARD 99)
 
 set(C_FLAGS
     -g
