@@ -16,14 +16,13 @@ set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 option(USE_VALGRIND "Build aco with valgrind" OFF)
 option(SHARE_FPU_MXCSR_ENV "Build aco with share fpu and mxcsr environment" OFF)
 
-set(CMAKE_C_STANDARD 99)
-
 set(C_FLAGS
     -g
     -Wall
     -Werror
     -fno-omit-frame-pointer
     -m64
+    -std=gnu11
     )
 
 set(ASM_FLAGS
@@ -32,8 +31,8 @@ set(ASM_FLAGS
     )
 
 if(ACO_USE_VALGRIND)
-  list(APPEND C_FLAGS "-DACO_USE_VALGRIND")
-  list(APPEND ASM_FLAGS "-DACO_USE_VALGRIND")
+    list(APPEND C_FLAGS "-DACO_USE_VALGRIND")
+    list(APPEND ASM_FLAGS "-DACO_USE_VALGRIND")
 endif()
 
 if(SHARE_FPU_MXCSR_ENV)
