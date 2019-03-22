@@ -1,0 +1,13 @@
+language: c
+sudo: false
+dist: trusty
+compiler:
+  - gcc
+os:
+  - linux
+script:
+  - gcc -v
+  - mkdir -p build && cd build && cmake .. && make && make install
+notifications:
+  email: never
+

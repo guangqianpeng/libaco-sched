@@ -1,0 +1,16 @@
+macro(add_aco_target TARGET)
+    add_executable(${TARGET} ${TARGET}.c)
+    target_link_libraries(${TARGET} aco)
+endmacro(add_aco_target)
+
+add_aco_target(echo)
+add_aco_target(discard)
+add_aco_target(chargen)
+add_aco_target(chargen_client)
+add_aco_target(time)
+add_aco_target(time_client)
+add_aco_target(daytime)
+add_aco_target(test_time_wheel)
+add_aco_target(spmc)
+add_aco_target(socks4)
+
