@@ -13,4 +13,5 @@ add_aco_target(daytime)
 add_aco_target(test_time_wheel)
 add_aco_target(spmc)
 add_aco_target(socks4)
+add_aco_target(timer)
 
